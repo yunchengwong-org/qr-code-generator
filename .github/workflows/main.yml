@@ -6,8 +6,8 @@ on:
     paths: ["qr-code-generator/**/VERSION"]
 
 env:
-  PROJECT_ID: YOUR_PROJECT_ID # TODO: update Google Cloud project id
-  GAR_LOCATION: YOUR_GAR_LOCATION # TODO: update Artifact Registry location
+  PROJECT_ID: sodium-hue-427709-u4
+  GAR_LOCATION: us-central1
 
 jobs:
   build:
