@@ -28,8 +28,10 @@ jobs:
         id: auth
         uses: 'google-github-actions/auth@v2'
         with:
+          token_format: access_token
           service_account: '${{ secrets.WIF_SERVICE_ACCOUNT }}'
           workload_identity_provider: '${{ secrets.WIF_PROVIDER }}'
+          access_token_lifetime: 300s
       - 
         name: Docker Auth
         id: docker-auth
