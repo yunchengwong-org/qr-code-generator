@@ -8,6 +8,7 @@ on:
 env:
   PROJECT_ID: sodium-hue-427709-u4
   GAR_LOCATION: us-central1
+  GAR_REPO_NAME: qr-code-generator
 
 jobs:
   build:
@@ -48,6 +49,6 @@ jobs:
             FOLDER=${versionFilePath%"/VERSION"}
             IMAGE_NAME=${FOLDER##*/}
 
-            docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/$IMAGE_NAME:${{ github.sha }}" --file "$FOLDER/Dockerfile" $FOLDER
-            docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/$IMAGE_NAME:${{ github.sha }}"
+            docker build -t "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO_NAME }}/$IMAGE_NAME:${{ github.sha }}" --file "$FOLDER/Dockerfile" $FOLDER
+            docker push "${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ env.PROJECT_ID }}/${{ env.GAR_REPO_NAME }}/$IMAGE_NAME:${{ github.sha }}"
           done;
