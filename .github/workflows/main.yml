@@ -3,7 +3,7 @@ name: Build and Push to Artifact Registry
 on:
   push:
     branches: [ "main" ]
-    paths: ["qr-code-generator/**/VERSION"]
+    paths: ["**/VERSION"]
 
 env:
   PROJECT_ID: sodium-hue-427709-u4
