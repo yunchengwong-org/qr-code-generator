@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: frontend
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: frontend
@@ -12,11 +12,10 @@ spec:
       labels:
         app: frontend
         track: stable
-        version: 1.0.0
     spec:
       containers:
         - name: frontend
-          image: "us-central1-docker.pkg.dev/sodium-hue-427709-u4/qrcodegenerator/frontend:${{ github.sha }}"
+          image: "us-central1-docker.pkg.dev/sodium-hue-427709-u4/qrcodegenerator/frontend:1.0.0"
           ports:
             - name: http
               containerPort: 80

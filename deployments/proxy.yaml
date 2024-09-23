@@ -21,12 +21,12 @@ spec:
               exec:
                 command: ["/usr/sbin/nginx","-s","quit"]
           volumeMounts:
-            - name: "nginx-conf"
+            - name: "nginx-proxy-conf"
               mountPath: "/etc/nginx/conf.d"
       volumes:
-        - name: "nginx-conf"
+        - name: "nginx-proxy-conf"
           configMap:
-            name: "nginx-conf"
+            name: "nginx-proxy-conf"
             items:
               - key: "default.conf"
                 path: "default.conf"

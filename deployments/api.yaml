@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: api
-          image: "us-central1-docker.pkg.dev/sodium-hue-427709-u4/qrcodegenerator/api:${{ github.sha }}"
+          image: "us-central1-docker.pkg.dev/sodium-hue-427709-u4/qrcodegenerator/api:1.0.0"
           ports:
             - name: http
               containerPort: 80
